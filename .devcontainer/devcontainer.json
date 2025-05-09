@@ -1,0 +1,22 @@
+{
+    "name": "SpeechRecognition Frontend Dev container",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "frotend",
+    "workspaceFolder": "/home/vscode/${localWorkspaceFolderBasename}",
+    // Featuring
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {},
+        "ghcr.io/devcontainers/features/docker-in-docker:2" :{}
+      },
+      // Custom
+      "customizations": {
+        "vscode": {
+          "extensions": [
+            "github.vscode-github-actions"
+          ]
+        }
+      },
+      "forwardPorts": [5500],
+      // LifeCycles
+    "initializeCommand": "bash ./.devcontainer/commands/initializeCommand.sh ${localWorkspaceFolder} ${containerWorkspaceFolder} ${localWorkspaceFolderBasename} ${containerWorkspaceFolderBasename}"
+}

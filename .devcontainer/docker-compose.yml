@@ -1,0 +1,15 @@
+services:
+  frotend:
+    container_name: frontend_dev_container
+    image: mcr.microsoft.com/devcontainers/base:bullseye
+
+    ports:
+      - 5500:5500
+
+    environment:
+      TZ: 'Asia/Seoul'
+
+    volumes:
+      # Workspace Cache
+      - ..:${containerWorkspaceFolder}:cached
+    command: sleep infinity
